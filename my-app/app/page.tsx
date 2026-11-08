@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteLogo from "./site-logo";
 
 const words = [
   { word: "curious", definition: "eager to know or learn something" },
@@ -20,12 +21,12 @@ export default function Home() {
   return (
     <>
       <header className="site-header">
-        <a className="wordmark" href="#home" aria-label="English Page home">
-          english<span>.</span>
-        </a>
+        <SiteLogo />
         <nav aria-label="Main navigation">
-          <a href="#practice">Practice</a>
-          <a href="#about">About</a>
+          <a href="/ready-for-ielts">Ready for IELTS</a>
+          <a href="/general-english">General English</a>
+          <a href="/business-english">Business English</a>
+          <a href="/ready-for-flex">Ready for Flex</a>
         </nav>
       </header>
 
