@@ -1644,6 +1644,307 @@ h2 {
 	border: 0;
 }
 
+.general-page {
+	--general-width: 1040px;
+}
+
+.general-hero {
+	position: relative;
+	display: flex;
+	min-height: 490px;
+	align-items: center;
+	justify-content: space-between;
+	overflow: hidden;
+	padding: 5rem max(10vw, calc((100vw - var(--general-width)) / 2));
+	background-color: #e9eee4;
+	background-image: linear-gradient(120deg, rgb(255 255 255 / 35%), transparent 58%), radial-gradient(#a5b99c 0.75px, transparent 0.75px);
+	background-position: 0 0, 12px 12px;
+	background-size: auto, 24px 24px;
+}
+
+.general-hero h1 {
+	margin-bottom: 1.25rem;
+	font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.general-hero h1 span {
+	color: var(--green);
+}
+
+.general-stamp {
+	display: grid;
+	width: 220px;
+	flex: 0 0 auto;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5rem;
+	transform: rotate(7deg);
+}
+
+.general-stamp span {
+	display: grid;
+	min-height: 86px;
+	place-items: center;
+	border: 1px solid #9db19e;
+	border-radius: 50%;
+	color: var(--green);
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-align: center;
+}
+
+.general-stamp span:nth-child(1),
+.general-stamp span:nth-child(4) {
+	background: var(--lime);
+}
+
+.general-section {
+	padding: 5.5rem max(10vw, calc((100vw - var(--general-width)) / 2));
+}
+
+.language-section,
+.listening-section {
+	background: #f7f7f1;
+}
+
+.grammar-section,
+.practice-section {
+	background: #edf0e9;
+}
+
+.general-columns,
+.general-practice-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1px;
+	border: 1px solid var(--line);
+	background: var(--line);
+}
+
+.general-panel,
+.general-score {
+	min-width: 0;
+	padding: 2rem;
+	background: #fff;
+}
+
+.general-vocabulary {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-top: 1px solid var(--line);
+}
+
+.general-word,
+.general-phrase {
+	position: relative;
+	min-height: 92px;
+	padding: 1rem 2.5rem 1rem 0;
+	border-bottom: 1px solid var(--line);
+}
+
+.general-word:nth-child(even) {
+	padding-left: 1rem;
+	border-left: 1px solid var(--line);
+}
+
+.general-word strong,
+.general-phrase strong {
+	display: block;
+	margin-bottom: 0.25rem;
+	font-size: 0.95rem;
+}
+
+.general-word span,
+.general-phrase span {
+	display: block;
+	color: var(--muted);
+	font-size: 0.82rem;
+	line-height: 1.5;
+}
+
+.general-word button,
+.general-phrase button {
+	position: absolute;
+	top: 1rem;
+	right: 0;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 1px solid #b7c8bc;
+	border-radius: 50%;
+	color: var(--green);
+	background: transparent;
+	cursor: pointer;
+	font-size: 0.9rem;
+}
+
+.general-word button:hover,
+.general-phrase button:hover,
+.general-word button:focus-visible,
+.general-phrase button:focus-visible {
+	color: white;
+	background: var(--green);
+}
+
+.general-phrase {
+	padding-right: 2.7rem;
+	border-bottom: 1px solid var(--line);
+}
+
+.general-phrase strong {
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.grammar-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+	border-top: 1px solid #cbd4c8;
+	border-bottom: 1px solid #cbd4c8;
+}
+
+.grammar-grid article {
+	padding: 1.5rem 1.5rem 1.5rem 0;
+	border-right: 1px solid #cbd4c8;
+}
+
+.grammar-grid article:last-child {
+	border-right: 0;
+}
+
+.grammar-label {
+	color: var(--green);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.grammar-grid h3 {
+	margin: 0.8rem 0;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 1.35rem;
+	font-weight: 600;
+}
+
+.grammar-grid p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.88rem;
+	line-height: 1.7;
+}
+
+.video-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.lesson-video {
+	min-width: 0;
+	border: 1px solid var(--line);
+	background: #fff;
+}
+
+.video-frame {
+	aspect-ratio: 16 / 9;
+	background: #dfe8de;
+}
+
+.video-frame iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.video-copy {
+	padding: 1.25rem;
+}
+
+.video-copy .tool-label {
+	margin-bottom: 0.6rem;
+}
+
+.video-copy h3 {
+	margin: 0 0 0.6rem;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 1.15rem;
+	font-weight: 600;
+}
+
+.video-copy p:last-child {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.84rem;
+	line-height: 1.6;
+}
+
+.general-question {
+	padding: 1rem 0;
+	border-top: 1px solid var(--line);
+}
+
+.general-question>p {
+	margin: 0 0 0.8rem;
+	line-height: 1.6;
+}
+
+.general-question>p strong {
+	color: var(--green);
+}
+
+.general-score {
+	background: #e9eee4;
+}
+
+.general-score output {
+	display: block;
+	margin: 0.5rem 0 1rem;
+	color: var(--green);
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 4rem;
+}
+
+.general-score output span {
+	color: var(--muted);
+	font-family: "DM Sans", sans-serif;
+	font-size: 1rem;
+}
+
+.general-score>p:last-child {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.86rem;
+	line-height: 1.6;
+}
+
+.lesson-notes {
+	display: block;
+	max-width: 40rem;
+	margin-top: 2rem;
+	color: var(--green);
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.lesson-notes textarea {
+	display: block;
+	width: 100%;
+	margin-top: 0.6rem;
+	resize: vertical;
+	padding: 0.9rem;
+	border: 1px solid var(--line);
+	border-radius: 0;
+	color: var(--ink);
+	background: #fff;
+	font: inherit;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
 @media (max-width: 700px) {
 
 	.site-header,
@@ -1807,6 +2108,68 @@ h2 {
 	.business-section,
 	.business-levels {
 		padding: 4rem 8vw;
+	}
+
+	.general-hero {
+		min-height: 560px;
+		align-items: flex-start;
+		padding: 4rem 8vw 8rem;
+	}
+
+	.general-hero h1 {
+		font-size: clamp(3rem, 13vw, 4.5rem);
+	}
+
+	.general-stamp {
+		position: absolute;
+		right: 8vw;
+		bottom: 2.5rem;
+		width: 145px;
+	}
+
+	.general-stamp span {
+		min-height: 54px;
+		font-size: 0.55rem;
+	}
+
+	.general-section {
+		padding: 4rem 8vw;
+	}
+
+	.general-columns,
+	.general-practice-grid,
+	.grammar-grid,
+	.video-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.general-vocabulary {
+		grid-template-columns: 1fr;
+	}
+
+	.general-word:nth-child(even) {
+		padding-left: 0;
+		border-left: 0;
+	}
+
+	.grammar-grid {
+		gap: 0;
+	}
+
+	.grammar-grid article,
+	.grammar-grid article:last-child {
+		padding: 1.3rem 0;
+		border-right: 0;
+		border-bottom: 1px solid #cbd4c8;
+	}
+
+	.grammar-grid article:last-child {
+		border-bottom: 0;
+	}
+
+	.general-panel,
+	.general-score {
+		padding: 1.5rem;
 	}
 
 	.level-tabs {
