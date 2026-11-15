@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import SiteLogo from '../site-logo';
+import ThemeToggle from '../theme-toggle';
 
 const essayPrompts = [
   'Describe a challenge you faced and how you handled it.',
@@ -191,6 +192,7 @@ export default function ReadyForFlexPage() {
             Ready for Flex
           </Link>
         </nav>
+        <ThemeToggle />
       </header>
 
       <main className='flex-page'>

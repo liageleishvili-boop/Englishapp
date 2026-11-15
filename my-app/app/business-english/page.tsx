@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import SiteLogo from '../site-logo';
+import ThemeToggle from '../theme-toggle';
 
 type LevelId = 'a2' | 'b1' | 'b2' | 'c1';
 
@@ -461,6 +462,7 @@ export default function BusinessEnglishPage() {
           </Link>
           <Link href='/ready-for-flex'>Ready for Flex</Link>
         </nav>
+        <ThemeToggle />
       </header>
 
       <main className='business-page'>

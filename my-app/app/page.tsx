@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import SiteLogo from './site-logo';
+import ThemeToggle from './theme-toggle';
 
 const words = [
   { word: 'curious', definition: 'eager to know or learn something' },
@@ -28,6 +29,7 @@ export default function Home() {
           <a href='/business-english'>Business English</a>
           <a href='/ready-for-flex'>Ready for Flex</a>
         </nav>
+        <ThemeToggle />
       </header>
 
       <main id='home'>

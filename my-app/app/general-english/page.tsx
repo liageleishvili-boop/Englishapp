@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import SiteLogo from '../site-logo';
+import ThemeToggle from '../theme-toggle';
 
 const vocabulary = [
   ['pleasure', 'pleasure, enjoyment'],
@@ -133,6 +134,7 @@ export default function GeneralEnglishPage() {
           <Link href='/business-english'>Business English</Link>
           <Link href='/ready-for-flex'>Ready for Flex</Link>
         </nav>
+        <ThemeToggle />
       </header>
 
       <main className='general-page'>

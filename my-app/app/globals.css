@@ -13,6 +13,16 @@
 	text-rendering: optimizeLegibility;
 }
 
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--ink: #edf2e9;
+	--muted: #aab8ad;
+	--paper: #18211e;
+	--green: #9dcc83;
+	--lime: #c9e57a;
+	--line: #35433b;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -25,6 +35,7 @@ body {
 	margin: 0;
 	color: var(--ink);
 	background: var(--paper);
+	transition: color 260ms ease, background-color 260ms ease;
 }
 
 a {
@@ -86,6 +97,48 @@ nav {
 nav a:hover,
 nav a:focus-visible {
 	color: var(--green);
+}
+
+.theme-toggle {
+	width: 46px;
+	height: 28px;
+	flex: 0 0 auto;
+	padding: 0;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	background: transparent;
+	cursor: pointer;
+}
+
+.theme-toggle-track {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	padding: 3px;
+}
+
+.theme-toggle-thumb {
+	display: grid;
+	width: 20px;
+	height: 20px;
+	place-items: center;
+	border-radius: 50%;
+	color: #315f50;
+	background: var(--lime);
+	font-size: 0.72rem;
+	line-height: 1;
+	transition: transform 260ms ease, background-color 260ms ease, color 260ms ease;
+}
+
+:root[data-theme="dark"] .theme-toggle-thumb {
+	color: #1b2822;
+	transform: translateX(17px);
+}
+
+.theme-toggle:focus-visible {
+	outline: 2px solid var(--green);
+	outline-offset: 3px;
 }
 
 .intro {
@@ -2523,6 +2576,117 @@ h2 {
 		align-items: flex-start;
 		flex-direction: column;
 		gap: 1rem;
+	}
+}
+
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .site-header,
+:root[data-theme="dark"] .site-footer,
+:root[data-theme="dark"] .word-panel,
+:root[data-theme="dark"] .general-panel,
+:root[data-theme="dark"] .general-score,
+:root[data-theme="dark"] .lesson-video,
+:root[data-theme="dark"] .flex-tool,
+:root[data-theme="dark"] .test-questions,
+:root[data-theme="dark"] .test-score,
+:root[data-theme="dark"] .group-language,
+:root[data-theme="dark"] .scenario-list,
+:root[data-theme="dark"] .interview-tool,
+:root[data-theme="dark"] .task-editor,
+:root[data-theme="dark"] .practice-tool {
+	color: var(--ink);
+	background-color: #202c27;
+	transition: color 260ms ease, background-color 260ms ease, border-color 260ms ease;
+}
+
+:root[data-theme="dark"] .intro,
+:root[data-theme="dark"] .about,
+:root[data-theme="dark"] .general-hero,
+:root[data-theme="dark"] .flex-hero,
+:root[data-theme="dark"] .ready-hero,
+:root[data-theme="dark"] .course-cta,
+:root[data-theme="dark"] .flex-cta {
+	background-color: #24352d;
+	background-image: linear-gradient(120deg, rgb(255 255 255 / 3%), transparent 58%), radial-gradient(#4c6855 0.75px, transparent 0.75px);
+}
+
+:root[data-theme="dark"] .practice,
+:root[data-theme="dark"] .language-section,
+:root[data-theme="dark"] .listening-section,
+:root[data-theme="dark"] .flex-essays,
+:root[data-theme="dark"] .flex-test,
+:root[data-theme="dark"] .flex-group,
+:root[data-theme="dark"] .flex-adapt,
+:root[data-theme="dark"] .business-section,
+:root[data-theme="dark"] .business-levels {
+	background-color: #18211e;
+}
+
+:root[data-theme="dark"] .grammar-section,
+:root[data-theme="dark"] .practice-section,
+:root[data-theme="dark"] .flex-overview,
+:root[data-theme="dark"] .flex-interview,
+:root[data-theme="dark"] .flex-plan,
+:root[data-theme="dark"] .skills-section {
+	background-color: #202c27;
+}
+
+:root[data-theme="dark"] .model-text,
+:root[data-theme="dark"] .phrase-list,
+:root[data-theme="dark"] .cue-tool blockquote,
+:root[data-theme="dark"] .flex-tool blockquote,
+:root[data-theme="dark"] .interview-tool blockquote,
+:root[data-theme="dark"] .reading-tool,
+:root[data-theme="dark"] .writing-tool,
+:root[data-theme="dark"] .task-editor textarea,
+:root[data-theme="dark"] .essay-writing-tool textarea,
+:root[data-theme="dark"] .lesson-notes textarea {
+	color: var(--ink);
+	background-color: #283831;
+}
+
+:root[data-theme="dark"] .orbit-core {
+	background: linear-gradient(145deg, #e1f3bb, #8dad5d);
+}
+
+:root[data-theme="dark"] .hero-stamp span,
+:root[data-theme="dark"] .business-stamp span,
+:root[data-theme="dark"] .flex-stamp span,
+:root[data-theme="dark"] .general-stamp span {
+	border-color: #d7eda7;
+	color: #17241e;
+	background: #c9e57a;
+	text-shadow: none;
+}
+
+:root[data-theme="dark"] .hero-stamp span:nth-child(2),
+:root[data-theme="dark"] .hero-stamp span:nth-child(3),
+:root[data-theme="dark"] .business-stamp span:nth-child(1),
+:root[data-theme="dark"] .business-stamp span:nth-child(4),
+:root[data-theme="dark"] .flex-stamp span:nth-child(2),
+:root[data-theme="dark"] .flex-stamp span:nth-child(3),
+:root[data-theme="dark"] .general-stamp span:nth-child(1),
+:root[data-theme="dark"] .general-stamp span:nth-child(4) {
+	background: #e2f4b4;
+}
+
+:root[data-theme="dark"] .orbit-chip {
+	border-color: #c9e57a;
+	color: #17241e;
+	background: #d9efa1;
+}
+
+:root[data-theme="dark"] .flex-notice {
+	background: #202c27;
+}
+
+@media (max-width: 700px) {
+	.site-header {
+		gap: 0.65rem;
+	}
+
+	.site-header nav {
+		max-width: 62%;
 	}
 }
 
