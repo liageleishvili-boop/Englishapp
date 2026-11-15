@@ -125,6 +125,134 @@ nav a:focus-visible {
 	content: "";
 }
 
+.hero-orbit {
+	position: absolute;
+	top: 50%;
+	right: max(8vw, calc((100vw - 1120px) / 2));
+	width: min(38vw, 470px);
+	aspect-ratio: 1;
+	perspective: 900px;
+	transform: translateY(-50%) rotate(-8deg);
+	transform-style: preserve-3d;
+	transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-orbit:hover {
+	transform: translateY(-50%) rotate(-3deg) rotateX(8deg) rotateY(-12deg);
+}
+
+.orbit-ring,
+.orbit-core,
+.orbit-chip,
+.orbit-dot {
+	position: absolute;
+}
+
+.orbit-ring {
+	top: 8%;
+	left: 8%;
+	width: 84%;
+	height: 84%;
+	border: 1px solid rgb(49 95 80 / 42%);
+	border-radius: 50%;
+	transform: rotateX(68deg) rotateZ(20deg);
+	transform-style: preserve-3d;
+}
+
+.orbit-ring-back {
+	border-color: rgb(49 95 80 / 18%);
+	transform: rotateX(68deg) rotateZ(-28deg) translateZ(-45px);
+}
+
+.orbit-ring-front {
+	border-color: rgb(49 95 80 / 45%);
+	transform: rotateX(68deg) rotateZ(20deg) translateZ(42px);
+}
+
+.orbit-core {
+	top: 25%;
+	left: 25%;
+	display: flex;
+	width: 50%;
+	height: 50%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgb(49 95 80 / 25%);
+	border-radius: 50%;
+	background: linear-gradient(145deg, #f8fff0, #d4e68d);
+	box-shadow: 22px 28px 0 rgb(49 95 80 / 10%), inset -12px -16px 25px rgb(49 95 80 / 12%);
+	transform: translateZ(60px);
+}
+
+.orbit-core-label,
+.orbit-core-note {
+	color: var(--green);
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.orbit-core strong {
+	margin: 0.5rem 0;
+	color: var(--ink);
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: clamp(1.7rem, 3vw, 2.8rem);
+	font-style: italic;
+}
+
+.orbit-chip {
+	padding: 0.55rem 0.75rem;
+	border: 1px solid rgb(49 95 80 / 25%);
+	border-radius: 999px;
+	color: var(--green);
+	background: rgb(255 255 255 / 70%);
+	box-shadow: 8px 10px 0 rgb(49 95 80 / 8%);
+	font-size: 0.75rem;
+	font-weight: 700;
+	backdrop-filter: blur(5px);
+}
+
+.orbit-chip-one {
+	top: 12%;
+	right: 4%;
+	transform: translateZ(90px) rotate(8deg);
+}
+
+.orbit-chip-two {
+	bottom: 15%;
+	left: 2%;
+	transform: translateZ(75px) rotate(-8deg);
+}
+
+.orbit-chip-three {
+	right: 1%;
+	bottom: 27%;
+	transform: translateZ(105px) rotate(5deg);
+}
+
+.orbit-dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--green);
+	box-shadow: 0 0 0 7px rgb(49 95 80 / 12%);
+}
+
+.orbit-dot-one {
+	top: 20%;
+	left: 16%;
+	transform: translateZ(80px);
+}
+
+.orbit-dot-two {
+	right: 20%;
+	bottom: 10%;
+	background: #9ab84c;
+	transform: translateZ(60px);
+}
+
 .eyebrow,
 .word-label {
 	margin: 0 0 1.1rem;
@@ -233,6 +361,13 @@ h2 {
 	padding: 2rem;
 	border: 1px solid var(--line);
 	background: #fff;
+	box-shadow: 12px 12px 0 #e1e8db;
+	transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.word-panel:hover {
+	box-shadow: 18px 18px 0 #dce6d6;
+	transform: translate(-3px, -3px);
 }
 
 .word-label {
@@ -252,6 +387,15 @@ h2 {
 	margin-bottom: 0;
 	color: var(--muted);
 	font-size: 0.9rem;
+}
+
+.word-index {
+	align-self: flex-start;
+	margin-left: auto;
+	color: var(--muted);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
 }
 
 .word-button {
@@ -1960,8 +2104,24 @@ h2 {
 	}
 
 	.intro {
-		min-height: 570px;
-		padding: 5rem 8vw;
+		min-height: 680px;
+		padding: 4rem 8vw 20rem;
+	}
+
+	.hero-orbit {
+		top: auto;
+		right: 8vw;
+		bottom: 2rem;
+		width: min(74vw, 330px);
+		transform: rotate(-6deg);
+	}
+
+	.hero-orbit:hover {
+		transform: rotate(-2deg) rotateX(5deg) rotateY(-7deg);
+	}
+
+	.orbit-core strong {
+		font-size: 1.8rem;
 	}
 
 	.intro::before {
@@ -1984,6 +2144,22 @@ h2 {
 	.practice {
 		grid-template-columns: 1fr;
 		gap: 2rem;
+	}
+
+	.word-panel {
+		position: relative;
+		min-height: 180px;
+		padding: 1.5rem;
+	}
+
+	.word-index {
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+	}
+
+	.word-panel .word-button {
+		margin-top: 2.5rem;
 	}
 
 	.about {
